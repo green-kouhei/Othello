@@ -2,7 +2,7 @@ package o_main;
 
 public class Hairetu_test {
 	// 初期設定
-	public static String BLACK = "●", WHITE = "○", Put = "*", emptiness = "・";
+	public static String BLACK = "●", WHITE = "○", Put = "*", emptiness = "ebi";
 	public static int black_count = 2, white_count = 2, mass_count = 60, black = 2, white = 1;
 
 	public static void main(String[] args) {
