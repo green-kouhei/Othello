@@ -1,12 +1,12 @@
 package o_main;
 
 public class Hairetu_test {
+	// 初期設定
 	public static String BLACK = "●", WHITE = "○", Put = "*", emptiness = "・";
 	public static int black_count = 2, white_count = 2, mass_count = 60, black = 2, white = 1;
 
 	public static void main(String[] args) {
-		// 初期設定
-		// String[][] Othello = new String[8][8];
+		
 		int[][] Othello = new int[8][8];
 
 		// 初期設定ー空マス設定
@@ -21,11 +21,12 @@ public class Hairetu_test {
 		Othello[4][4] = black;
 		Othello[3][4] = white;
 		Othello[4][3] = white;
+		//Othello[4][3] = ;
 
 		display(Othello);
 
 	}
-
+	
 	public static void display(int[][] s)// 全体表示
 	{
 		for (int a = 0; a < 8; a++) {
