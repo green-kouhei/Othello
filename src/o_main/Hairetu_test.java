@@ -36,7 +36,7 @@ public class Hairetu_test {
 			else{
 				turn_count = 1;
 			}
-			Othello = h.hantei(Othello,turn_count);    //仮で黒を入れてる本当はターンの人の色を入れる
+			Othello = h.hantei(Othello,turn_count); 
 			display(Othello);
 			Othello = s.set(Othello,turn_count);
 			display(Othello);
