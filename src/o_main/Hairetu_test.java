@@ -37,17 +37,17 @@ public class Hairetu_test {
 			else{
 				turn_count = 1;
 			}
-			Othello = h.hantei(Othello,turn_count); 
+			Othello = h.hantei(Othello,turn_count);
 			display(Othello);
 			Othello = s.set(Othello,turn_count);
 			display(Othello);
 			mass_count--;
 		}
 	}
-	
+
 	public static void display(int[][] s)// 全体表示
 	{
-		
+
 		for (int a = 0; a < 8; a++) {
 			for (int b = 0; b < 8; b++) {
 				System.out.print(" ");
