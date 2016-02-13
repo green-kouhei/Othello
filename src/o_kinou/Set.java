@@ -24,6 +24,8 @@ public class Set {
 			}
 			if(s[y][x] == 3){
 				s[y][x] = collar;
+				gx = x;
+				gy = y;
 				break;
 			}
 			else{
