@@ -1,12 +1,14 @@
 package o_main;
 
+import o_kinou.Hantei;
+
 public class Hairetu_test {
 	// 初期設定
 	public static String BLACK = "●", WHITE = "○", Put = "*", emptiness = "・";
 	public static int black_count = 2, white_count = 2, mass_count = 60, black = 2, white = 1;
 
 	public static void main(String[] args) {
-		
+		Hantei h = new Hantei();
 		int[][] Othello = new int[8][8];
 
 		// 初期設定ー空マス設定
@@ -22,9 +24,9 @@ public class Hairetu_test {
 		Othello[3][4] = white;
 		Othello[4][3] = white;
 		//Othello[4][3] = ;
-
 		display(Othello);
-
+		Othello = h.hantei(Othello,1);    //仮で黒を入れてる本当はターンの人の色を入れる
+		display(Othello);
 	}
 	
 	public static void display(int[][] s)// 全体表示
@@ -49,6 +51,7 @@ public class Hairetu_test {
 			}
 			System.out.println("");
 		}
+		System.out.println("");
 
 	}
 }
