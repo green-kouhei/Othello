@@ -6,7 +6,8 @@ public class Set {
 	public int[][] set(int[][] s,int collar){
 		Scanner sin = new Scanner(System.in);
 		for(;;){
-			System.out.println("置く場所を指定してください|n０～７までと０～７");
+			System.out.println("置く場所を指定してください");
+			System.out.println("０～７までと０～７");
 			int y = sin.nextInt();
 			if(y < 0 || y > 7){
 				System.out.println("範囲外です");
