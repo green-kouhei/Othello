@@ -3,6 +3,8 @@ package o_kinou;
 import java.util.Scanner;
 
 public class Set {
+	public static int gx;
+	public static int gy;
 	public int[][] set(int[][] s,int collar){
 		Scanner sin = new Scanner(System.in);
 		Change g = new Change();
@@ -62,5 +64,5 @@ class Change{
 			return 0;
 		}
 	}
-	
+
 }
