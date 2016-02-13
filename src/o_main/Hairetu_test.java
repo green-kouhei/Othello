@@ -25,12 +25,14 @@ public class Hairetu_test {
 		Othello[4][3] = white;
 		//Othello[4][3] = ;
 		display(Othello);
-		Othello = h.hantei(Othello,1);    //仮で黒を入れてる本当はターンの人の色を入れる
+		Othello = h.hantei(Othello,black);    //仮で黒を入れてる本当はターンの人の色を入れる
 		display(Othello);
+		System.out.format("黒%d個                      白%d個",black_count,white_count);
 	}
 	
 	public static void display(int[][] s)// 全体表示
 	{
+		
 		for (int a = 0; a < 8; a++) {
 			for (int b = 0; b < 8; b++) {
 				switch (s[a][b]) {

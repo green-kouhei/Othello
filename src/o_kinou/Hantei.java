@@ -1,12 +1,14 @@
 package o_kinou;
 
 public class Hantei {
-	public int[][] hantei(int[][] s,int B){
+	public int[][] hantei(int[][] s,int collar){
 //		配列の中身を確認するループ
 		for(int x = 0;x<8;x++){
 			for(int y = 0;y < 8;y++){
-				if(s[x][y] != B)
+				if(s[x][y] != collar){
 					continue;
+				}
+				
 //				s[x][y]の中身が黒か白か空白かの判定
 				switch (s[x][y]) {
 				case (1):
