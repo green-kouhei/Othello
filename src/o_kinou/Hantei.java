@@ -22,7 +22,7 @@ public class Hantei {
 								int y2 = y+a; int x2 = x+b;
 								loop:
 								for(;;){
-									if(x2+b < 0 || x2+b > 7 || y2+a < 0 || y2+a > 7)       //ここで外枠の判定
+									if(x2 < 0 || x2 > 7 || y2 < 0 || y2 > 7)       //ここで外枠の判定
 										break;
 									if(s[y2+a][x2+b] == 2){                        //もし黒ならさらに次のもすを調べる
 										y2 += a; x2 += b;
