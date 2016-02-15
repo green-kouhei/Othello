@@ -1,6 +1,8 @@
 package o_kinou;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Set {
 	// public void re(){
@@ -9,16 +11,37 @@ public class Set {
 
 	public int[][] set(int[][] s, int collar) {
 		int gx = 0, gy = 0;// To_reverse用変数
-		Scanner sin = new Scanner(System.in);
+		 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		SuffixCorrection sc = new SuffixCorrection();
 		for (;;) {
 			System.out.println("置く場所を指定してください");
-			System.out.println("０～７までと０～７");
-			int y = sin.nextInt();
+			System.out.println("Y軸１～８");
+			int y = 0;
+			try{
+				String buf = br.readLine();
+				y = Integer.parseInt(buf);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}catch( java.lang.NumberFormatException e1){
+				System.out.println("使用できない文字です");
+				continue;
+			}
+			y = sc.SC(y);
 			if (y < 0 || y > 7) {
 				System.out.println("範囲外です");
 				continue;
 			}
-			int x = sin.nextInt();
+			System.out.println("X軸a～h");
+			String Suffix = null;
+			try{
+				Suffix = br.readLine();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}catch( java.lang.NumberFormatException e1){
+				System.out.println("使用できない文字です");
+				continue;
+			}
+			int x = sc.SC(Suffix);
 			if (x < 0 || x > 7) {
 				System.out.println("範囲外です");
 				continue;
@@ -40,5 +63,33 @@ public class Set {
 			}
 		}
 		return s;
+	}
+}
+
+class SuffixCorrection{
+	public int SC(int i){
+		return --i;
+	}
+	public int SC(String s){
+		switch(s){
+		case "a":
+			return 0;
+		case "b":
+			return 1;
+		case "c":
+			return 2;
+		case "d":
+			return 3;
+		case "e":
+			return 4;
+		case "f":
+			return 5;
+		case "g":
+			return 6;
+		case "h":
+			return 7;
+			default:
+				return -1;
+		}
 	}
 }

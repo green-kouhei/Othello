@@ -5,10 +5,10 @@ import o_kinou.Set;
 
 public class Hairetu_test {
 	// 初期設定
-	public static String BLACK = "●", WHITE = "○", Put = "*", emptiness = "◎";
+	public static String BLACK = "●　", WHITE = "○　", Put = "*　", emptiness = "□　";
 	public static int black_count = 2, white_count = 2, mass_count = 60, black = 2, white = 1,turn_count = 1;
-	public static int[] NumberM = {1,2,3,4,5,6,7,8};
-	public static String[] NumberE = {"a","b","c","d","e","f","g","h"};
+	public static String[] NumberM = {"1 ","2 ","3 ","4 ","5 ","6 ","7 ","8 "};
+	public static String[] NumberE = {"  △     "," a　"," b　"," c　"," d　"," e　"," f　"," g　"," h　"};
 	public static void main(String[] args) {
 		Hantei h = new Hantei();
 		Set s = new Set();
@@ -47,13 +47,13 @@ public class Hairetu_test {
 
 	public static void display(int[][] s)// 全体表示
 	{
-
+		for(int i = 0;i<9;i++){
+		System.out.print(NumberE[i]);
+		}
+		System.out.println();
 		for (int a = 0; a < 8; a++) {
 			for (int b = 0; b < 8; b++) {
 				System.out.print(" ");
-//				if(a == 0)
-//					for(int i = 0;i<8;i++)
-//					System.out.print(NumberE[b]);
 				if(b == 0){
 					System.out.print(NumberM[a]);
 					System.out.print(" ");
