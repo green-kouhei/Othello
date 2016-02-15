@@ -48,9 +48,6 @@ public class Hantei {
 							}
 						}
 					}
-					if(count == 0){
-						Hairetu_test.pass = 1;
-					}
 					break;
 
 				case (2):
@@ -83,15 +80,15 @@ public class Hantei {
 							}
 						}
 					}
-					if(count == 0){                                                    //もし置ける場所がなかったらpassに１を
-						Hairetu_test.pass = 1;
-					}
 					break;
 
 				default:
 					break;
 				}
 			}
+		}
+		if(count == 0){                                                    //もし置ける場所がなかったらpassに１を
+			Hairetu_test.pass = 1;
 		}
 		return s;
 	}

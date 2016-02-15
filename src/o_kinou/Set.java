@@ -15,8 +15,8 @@ public class Set {
 		SuffixCorrection sc = new SuffixCorrection();                                //下のほうにclass追加してある
 		for (;;) {
 			System.out.println("置く場所を指定してください");
-			System.out.println("Y軸１～８");
 			
+			System.out.println("Y軸１～８");
 			int y = 0;
 			try{
 				String buf = br.readLine();                                          //readLine()でSystem.inしたものを
