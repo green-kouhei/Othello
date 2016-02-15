@@ -1,7 +1,10 @@
 package o_kinou;
 
+import o_main.Hairetu_test;
+
 public class Hantei {
 	public int[][] hantei(int[][] s,int collar){
+		int count = 0;
 //		配列の中身を確認するループ
 		for(int y = 0;y<8;y++){
 			for(int x = 0;x < 8;x++){
@@ -37,13 +40,16 @@ public class Hantei {
 									}
 									else if(s[y2+a][x2+b] == 0){                   //もし空白なら印をつける
 										s[y2+a][x2+b] = 3;
+										count++;
 										break;
 									}
 									break;
 								}
 							}
 						}
-
+					}
+					if(count == 0){
+						Hairetu_test.pass = 1;
 					}
 					break;
 
@@ -69,12 +75,16 @@ public class Hantei {
 									}
 									else if(s[y2+a][x2+b] == 0){
 										s[y2+a][x2+b] = 3;
+										count++;
 										break;
 									}
 									break;
 								}
 							}
 						}
+					}
+					if(count == 0){                                                    //もし置ける場所がなかったらpassに１を
+						Hairetu_test.pass = 1;
 					}
 					break;
 
