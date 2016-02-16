@@ -8,22 +8,23 @@ public class Set {
 	// public void re(){
 	// //int Y = 0, X = 0;//To_reverse用変数
 	// }
+	public static int gx = 0, gy = 0;// To_reverse用変数
 
 	public int[][] set(int[][] s, int collar) {
-		int gx = 0, gy = 0;// To_reverse用変数
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));    //Scannerと同じ役割
-		SuffixCorrection sc = new SuffixCorrection();                                //下のほうにclass追加してある
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); // Scannerと同じ役割
+		SuffixCorrection sc = new SuffixCorrection(); // 下のほうにclass追加してある
 		for (;;) {
 			System.out.println("置く場所を指定してください");
-			
+
 			System.out.println("Y軸１～８");
 			int y = 0;
-			try{
-				String buf = br.readLine();                                          //readLine()でSystem.inしたものを
-				y = Integer.parseInt(buf);                                           //読み込んでbufに入れてparseIntで
-			} catch (IOException e) {                                                //intに変換している
+			try {
+				String buf = br.readLine(); // readLine()でSystem.inしたものを
+				y = Integer.parseInt(buf); // 読み込んでbufに入れてparseIntで
+			} catch (IOException e) { // intに変換している
 				System.out.println("エラー");
-			} catch (java.lang.NumberFormatException e1){
+			} catch (java.lang.NumberFormatException e1) {
 				System.out.println("使用できない文字です");
 				continue;
 			}
@@ -32,14 +33,14 @@ public class Set {
 				System.out.println("範囲外です");
 				continue;
 			}
-			
+
 			System.out.println("X軸a～h");
 			String Suffix = null;
-			try{
+			try {
 				Suffix = br.readLine();
 			} catch (IOException e) {
 				System.out.println("エラー");
-			} catch (java.lang.NumberFormatException e1){
+			} catch (java.lang.NumberFormatException e1) {
 				System.out.println("使用できない文字です");
 				continue;
 			}
@@ -68,12 +69,13 @@ public class Set {
 	}
 }
 
-class SuffixCorrection{                                //SuffixCorrectionの直訳は添え字修正
-	public int SC(int i){                              //このクラス名の理由「かっこいいからw」
+class SuffixCorrection { // SuffixCorrectionの直訳は添え字修正
+	public int SC(int i) { // このクラス名の理由「かっこいいからw」
 		return --i;
 	}
-	public int SC(String s){
-		switch(s){
+
+	public int SC(String s) {
+		switch (s) {
 		case "a":
 			return 0;
 		case "b":
