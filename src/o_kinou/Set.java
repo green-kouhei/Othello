@@ -22,9 +22,11 @@ public class Set {
 			try {
 				String buf = br.readLine(); // readLine()でSystem.inしたものを
 				y = Integer.parseInt(buf); // 読み込んでbufに入れてparseIntで
-			} catch (IOException e) { // intに変換している
+			} 
+			catch (IOException e) { // intに変換している
 				System.out.println("エラー");
-			} catch (java.lang.NumberFormatException e1) {
+			} 
+			catch (java.lang.NumberFormatException e1) {
 				System.out.println("使用できない文字です");
 				continue;
 			}
@@ -40,11 +42,16 @@ public class Set {
 				Suffix = br.readLine();
 			} catch (IOException e) {
 				System.out.println("エラー");
-			} catch (java.lang.NumberFormatException e1) {
+			} 
+//			catch (java.lang.NumberFormatException e1) {
+//				System.out.println("使用できない文字です");
+//				continue;
+//			}
+			int x = sc.SC(Suffix);
+			if(x == -1){
 				System.out.println("使用できない文字です");
 				continue;
 			}
-			int x = sc.SC(Suffix);
 			if (x < 0 || x > 7) {
 				System.out.println("範囲外です");
 				continue;

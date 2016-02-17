@@ -14,7 +14,7 @@ public class Hairetu_test {
 		Set s = new Set();
 		int[][] Othello = new int[8][8];
 
-		// 初期設定ー空マス設定ー   列、行番設定
+		// 初期設定ー空マス設定
 		for (int a = 0; a < 8; a++) {
 			for (int b = 0; b < 8; b++) {
 				Othello[a][b] = 0;
