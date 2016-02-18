@@ -1,17 +1,20 @@
 package o_main;
 
 import o_kinou.Hantei;
+import o_kinou.Reverse;
 import o_kinou.Set;
 
 public class Hairetu_test {
 	// 初期設定
-	public static String BLACK = "●　", WHITE = "○　", Put = "*　", emptiness = "□　";
-	public static int black_count = 2, white_count = 2, mass_count = 60, black = 2, white = 1,turn_count = 1,pass = 0;
-	public static String[] NumberM = {"1 ","2 ","3 ","4 ","5 ","6 ","7 ","8 "};
-	public static String[] NumberE = {"  △     "," a　"," b　"," c　"," d　"," e　"," f　"," g　"," h　"};
+	public static String BLACK = "●　", WHITE = "○　", Put = "◎　", emptiness = "□　";
+	public static int black_count = 2, white_count = 2, mass_count = 60, black = 2, white = 1, turn_count = 1, pass = 0;
+	public static String[] NumberM = { "1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 " };
+	public static String[] NumberE = { "  △     ", " a　", " b　", " c　", " d　", " e　", " f　", " g　", " h　" };
+
 	public static void main(String[] args) {
 		Hantei h = new Hantei();
 		Set s = new Set();
+		Reverse r = new Reverse();
 		int[][] Othello = new int[8][8];
 
 		// 初期設定ー空マス設定
@@ -26,24 +29,24 @@ public class Hairetu_test {
 		Othello[4][4] = black;
 		Othello[3][4] = white;
 		Othello[4][3] = white;
-		//Othello[4][3] = ;
+		// Othello[4][3] = ;
 		display(Othello);
 
-//		ゲーム開始
-		for(;mass_count != 0;){
-			if(turn_count == 1){
+		// ゲーム開始
+		for (; mass_count != 0;) {
+			if (turn_count == 1) {
 				turn_count = 2;
-			}
-			else{
+			} else {
 				turn_count = 1;
 			}
-			Othello = h.hantei(Othello,turn_count);
+			Othello = h.hantei(Othello, turn_count);
 			display(Othello);
-			if(pass == 1){
+			if (pass == 1) {
 				pass = 0;
 				continue;
 			}
-			Othello = s.set(Othello,turn_count);
+			Othello = s.set(Othello, turn_count);
+			Othello = r.reverse(Othello);
 			display(Othello);
 			mass_count--;
 		}
@@ -52,14 +55,14 @@ public class Hairetu_test {
 
 	public static void display(int[][] s)// 全体表示
 	{
-		for(int i = 0;i<9;i++){
-		System.out.print(NumberE[i]);
+		for (int i = 0; i < 9; i++) {
+			System.out.print(NumberE[i]);
 		}
 		System.out.println();
 		for (int a = 0; a < 8; a++) {
 			for (int b = 0; b < 8; b++) {
 				System.out.print(" ");
-				if(b == 0){
+				if (b == 0) {
 					System.out.print(NumberM[a]);
 					System.out.print(" ");
 				}
