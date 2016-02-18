@@ -11,6 +11,8 @@ class everse {
 }
 
 public class Reverse {
+	ArrayList<Integer> ay = new ArrayList<Integer>();
+	ArrayList<Integer> ax = new ArrayList<Integer>();
 
 	public int[][] reverse(int[][] z) {
 
@@ -19,14 +21,14 @@ public class Reverse {
 		 * Hanteiメゾットちょっと変えたやつ(全部のマス見なくていいため)動かす
 		 */
 
-		ArrayList<Integer> ay, ax;
-		ay = new ArrayList<Integer>(10);
-		
-		ax = new ArrayList<Integer>(10);
-//		for (int i = 0; i < 70; i++) {
-//		    ay.add(-1);
-//		    ax.add(-1);
-//		}
+		// ArrayList<Integer> ay, ax;
+		// ay = new ArrayList<Integer>();
+		// ax = new ArrayList<Integer>();
+
+		// for (int i = 0; i < 70; i++) {
+		// ay.add(-1);
+		// ax.add(-1);
+		// }
 		int flag = 0, count = 0, p1 = 0, p2 = 0;
 
 		switch (z[Set.gy][Set.gx]) {// 置いた駒は何色？
@@ -41,8 +43,8 @@ public class Reverse {
 					p1 = Set.gy + c1;
 					p2 = Set.gx + c2;
 
-					check: for (int t=0;;t++) {
-						switch (z[Set.gy + c1][Set.gx + c2]) {
+					check: for (int t = 0;; t++) {
+						switch (z[p1][p2]) {
 						case (0):
 							break;
 						case (3):// いらない
@@ -51,17 +53,17 @@ public class Reverse {
 							if (flag == 1) {
 								// ひっくり返す処理
 								for (int i = 0; i < ay.size(); i++) {
-//									if(ay.get(i)==-1){
-//										break;
-//									}
+									// if(ay.get(i)==-1){
+									// break;
+									// }
 									z[ay.get(i)][ax.get(i)] = 1;
 								}
 
 							}
 							break;
 						case (2):
-							ay.add(t,p1);
-							ax.add(t,p2);
+							ay.add(t, p1);
+							ax.add(t, p2);
 							flag = 1;
 							// count += 1;
 							// さらに横確認
@@ -75,10 +77,10 @@ public class Reverse {
 					flag = 0;
 					ay.clear();
 					ax.clear();
-//					for (int i = 0; i < ax.size(); i++) {
-//					    ay.add(null);
-//					    ax.add(null);
-//					}
+					// for (int i = 0; i < ax.size(); i++) {
+					// ay.add(null);
+					// ax.add(null);
+					// }
 				}
 			}
 			break;
@@ -93,7 +95,7 @@ public class Reverse {
 					p1 = Set.gy + c1;
 					p2 = Set.gx + c2;
 
-					check: for (int t =0;;t++) {
+					check: for (int t = 0;; t++) {
 						switch (z[p1][p2]) {
 						case (0):
 							break;
@@ -103,17 +105,17 @@ public class Reverse {
 							if (flag == 1) {
 								// ひっくり返す処理
 								for (int i = 0; i < ay.size(); i++) {
-//									if(ay.get(i)==-1){
-//										break;
-//									}
+									// if(ay.get(i)==-1){
+									// break;
+									// }
 									z[ay.get(i)][ax.get(i)] = 2;
 								}
 
 							}
 							break;
 						case (1):
-							ay.add(t,p1);
-							ax.add(t,p2);
+							ay.add(t, p1);
+							ax.add(t, p2);
 							flag = 1;
 							// count += 1;
 							// さらに横確認
@@ -127,11 +129,11 @@ public class Reverse {
 					flag = 0;
 					ay.clear();
 					ax.clear();
-//					for (int i = 0; i < ay.size(); i++) {
-//					    ay.add(null);
-//					    ax.add(null);
-//					}
-					
+					// for (int i = 0; i < ay.size(); i++) {
+					// ay.add(null);
+					// ax.add(null);
+					// }
+
 				}
 			}
 			break;
