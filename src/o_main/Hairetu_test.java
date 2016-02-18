@@ -6,10 +6,10 @@ import o_kinou.Set;
 
 public class Hairetu_test {
 	// 初期設定
-	public static String BLACK = "●　", WHITE = "○　", Put = "◎　", emptiness = "□　";
+	public static String BLACK = "● ", WHITE = "○ ", Put = "◎ ", emptiness = "□ ";
 	public static int black_count = 2, white_count = 2, mass_count = 60, black = 2, white = 1, turn_count = 1, pass = 0;
 	public static String[] NumberM = { "1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 " };
-	public static String[] NumberE = { "  △     ", " a　", " b　", " c　", " d　", " e　", " f　", " g　", " h　" };
+	public static String[] NumberE = { "△ ", " a ", " b ", " c ", " d ", " e ", " f ", " g ", " h " };
 
 	public static void main(String[] args) {
 		Hantei h = new Hantei();
@@ -39,6 +39,8 @@ public class Hairetu_test {
 			} else {
 				turn_count = 1;
 			}
+			System.out.format("%sのターン",turn_count == black ? "黒" : "白");
+			System.out.println();
 			Othello = h.hantei(Othello, turn_count);
 			display(Othello);
 			if (pass == 1) {

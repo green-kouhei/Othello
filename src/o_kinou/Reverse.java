@@ -44,6 +44,7 @@ public class Reverse {
 					p2 = Set.gx + c2;
 
 					check: for (int t = 0;; t++) {
+						try{
 						switch (z[p1][p2]) {
 						case (0):
 							break;
@@ -71,7 +72,9 @@ public class Reverse {
 							p2 += c2;
 							continue check;
 						}
-
+						}catch(java.lang.ArrayIndexOutOfBoundsException e){
+							break;
+						}
 						break;
 					}
 					flag = 0;
@@ -96,6 +99,7 @@ public class Reverse {
 					p2 = Set.gx + c2;
 
 					check: for (int t = 0;; t++) {
+						try{
 						switch (z[p1][p2]) {
 						case (0):
 							break;
@@ -123,6 +127,9 @@ public class Reverse {
 							p2 += c2;
 							continue check;
 						}
+					}catch(java.lang.ArrayIndexOutOfBoundsException e){
+					break;	
+					}
 
 						break;
 					}
