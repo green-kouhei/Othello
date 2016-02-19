@@ -1,12 +1,13 @@
 package o_kinou;
 
-public class display {
+public class Display {
 	public static String BLACK = "● ", WHITE = "○ ", Put = "◎ ", emptiness = "□ ";
 	public static String[] NumberM = { "1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 " };
 	public static String[] NumberE = { "△ ", " a ", " b ", " c ", " d ", " e ", " f ", " g ", " h " };
-	public static void display(int[][] s)// 全体表示
+
+	public void display(int[][] s)// 全体表示
 	{
-		
+
 		for (int i = 0; i < 9; i++) {
 			System.out.print(NumberE[i]);
 		}
@@ -32,7 +33,7 @@ public class display {
 					System.out.print(Put);
 					break;
 				}
-				// System.out.print(s[a][b]);
+
 			}
 			System.out.println("");
 		}
